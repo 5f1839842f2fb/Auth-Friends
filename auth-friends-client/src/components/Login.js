@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+import spinner from '../thonkspin.gif'
+
 const Login = props => {
   const [login, setLogin] = useState({ username: '', password: '' })
   const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +32,7 @@ const Login = props => {
           <input placeholder="Password" onChange={event => setLogin({...login, password: event.target.value})}/>
           <button>Submit</button>
         </form>
-      : <h1>loading</h1>}
+      : <img src={spinner}/>}
     </div>
   )
 }

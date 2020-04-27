@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import spinner from '../thonkspin.gif'
+
 const FriendsList = props => {
   const [friends, setFriends] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
@@ -36,7 +38,7 @@ const FriendsList = props => {
               </div>
             )
           })
-        : <h1>loading</h1>
+        : <img src={spinner}/>
         } 
         <form onSubmit={handleSubmit}>
           <input placeholder="Name" onChange={event => setNewFriend({...newFriend, name: event.target.value})}/>
